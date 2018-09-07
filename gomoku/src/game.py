@@ -2,6 +2,7 @@ from board import board
 from intelligence import intelligence
 import sys
 import os
+import math
 
 #funções que não permitem jogar nos extremos do jogo
 
@@ -44,10 +45,12 @@ class game:
     
         self.board = board()
         self.intelligence = intelligence()
-        self.human_sequence_list = []
-        self.computer_sequence_list = []
+        self.human_sequence_list = [0, 0, 0, 0]
+        self.computer_sequence_list = [0, 0, 0, 0]
         
         """ 
+        idea initial
+        sequence_list
         position 0 in list -> 2 pieces with one open side
         position 1 in list -> 2 pieces with two open side
         position 2 in list -> 3 pieces with one open side
@@ -56,6 +59,12 @@ class game:
         position 5 in list -> 4 pieces with two open side
         position 6 in list -> 5 pieces with one open side
         position 7 in list -> 5 pieces with two open side
+
+        idea implement
+        position 0 in list -> 2 pieces
+        position 1 in list -> 3 pieces
+        position 2 in list -> 4 pieces
+        position 3 in list -> 5 pieces
         """
         self.list_pos_human = []
         self.list_pos_computer = []
@@ -77,7 +86,6 @@ class game:
             return False
         else:
             pos_list.append(map_position)
-            self.board.spaces.remove(map_position)
             return True
         
         #pos_list.sort()
@@ -85,7 +93,9 @@ class game:
 
     def play_computer(self):
     
-        position_y, position_x = self.intelligence.debug_no_intelligence(self.board.matrix)
+        #position_y, position_x = self.intelligence.debug_no_intelligence(self.board.matrix)
+        position_x, position_y, best = self.intelligence.mini_max((-math.inf), math.inf, 2, 5, self.computer_sequence_list)
+
         
         if(self.insert_pos_list(self.list_pos_computer,int(position_x),int(position_y)) == True):
 
@@ -109,69 +119,76 @@ class game:
     def verify_x(self, pos_list,sequence_list):
     
         if(len(pos_list) > 1):
-            for i in pos_list:
-                                
+            for i in pos_list:                               
                 #print(i)
                 if(ver_r(i + 1) in pos_list and ver_r(i + 2) in pos_list and ver_r(i + 3) in pos_list and ver_r(i + 4) in pos_list):
-                    sequence_list.append(5)
+                    aux = sequence_list[3]
+                    sequence_list[3] = aux + 1
                 elif(ver_r(i + 1) in pos_list and ver_r(i + 2) in pos_list and ver_r(i + 3) in pos_list ):
-                    sequence_list.append(4)
+                    aux = sequence_list[2]
+                    sequence_list[2] = aux + 1
                 elif(ver_r(i + 1) in pos_list and ver_r(i + 2) in pos_list ):
-                    sequence_list.append(3)
-                elif(ver_r(i + 1) in pos_list ):
-                    sequence_list.append(2)
-                    
-        sequence_list.append(10)
+                    aux = sequence_list[1]
+                    sequence_list[1] = aux + 1
+                elif(ver_r(i + 1) in pos_list):
+                    aux = sequence_list[0]
+                    sequence_list[0] = aux + 1
     
     def verify_y(self,pos_list,sequence_list):
         if(len(pos_list) > 1):
             for i in pos_list:
                 #print(i)
                 if(ver_v(i + 15) in pos_list and ver_v(i + (15*2)) in pos_list and ver_v(i + (15*3)) in pos_list and ver_v(i + (15*4)) in pos_list):
-                    sequence_list.append(5)
+                    aux = sequence_list[3]
+                    sequence_list[3] = aux + 1
                 elif(ver_v(i + 15) in pos_list and ver_v(i + (15*2)) in pos_list and ver_v(i + 15*3) in pos_list):
-                    sequence_list.append(4)
+                    aux = sequence_list[2]
+                    sequence_list[2] = aux + 1
                 elif(ver_v(i + 15) in pos_list and ver_v(i + (15*2)) in pos_list):
-                    sequence_list.append(3)
+                    aux = sequence_list[1]
+                    sequence_list[1] = aux + 1
                 elif(ver_v(i + 15) in pos_list):
-                    sequence_list.append(2)
-                    
-        sequence_list.append(100)
+                    aux = sequence_list[0]
+                    sequence_list[0] = aux + 1
                     
     def verify_diagonal(self, pos_list,sequence_list):
         if(len(pos_list) > 1):
             for i in pos_list:
                 #print(i)
                 if(ver_d(i + 15+1) in pos_list and ver_d(i + (15*2)+2) in pos_list and ver_d(i + (15*3)+3) in pos_list and ver_d(i + (15*4)+4) in pos_list):
-                    sequence_list.append(5)
+                    aux = sequence_list[3]
+                    sequence_list[3] = aux + 1
                 elif(ver_d(i + 15+1) in pos_list and ver_d(i + (15*2)+2) in pos_list and ver_d(i + (15*3)+3) in pos_list):
-                    sequence_list.append(4)
+                    aux = sequence_list[2]
+                    sequence_list[2] = aux + 1
                 elif(ver_d(i + 15+1) in pos_list and ver_d(i + (15*2)+2) in pos_list):
-                    sequence_list.append(3)
+                    aux = sequence_list[1]
+                    sequence_list[1] = aux + 1
                 elif(ver_d(i + 15+1) in pos_list):
-                    sequence_list.append(2)
-                    
-        sequence_list.append(1000)
+                    aux = sequence_list[0]
+                    sequence_list[0] = aux + 1
         
     def verify_inverse_diagonal(self,pos_list,sequence_list):
         if(len(pos_list) > 1):
             for i in pos_list:
                 #print(i)
                 if(ver_d2(i + 15-1) in pos_list and ver_d2(i + (15*2)-2) in pos_list and ver_d2(i + (15*3)-3) in pos_list and ver_d2(i + (15*4)-4) in pos_list):
-                    sequence_list.append(5)
+                    aux = sequence_list[3]
+                    sequence_list[3] = aux + 1
                 elif(ver_d2(i + 15+1) in pos_list and ver_d2(i + (15*2)-2) in pos_list and ver_d2(i + (15*3)-3) in pos_list):
-                    sequence_list.append(4)
+                    aux = sequence_list[2]
+                    sequence_list[2] = aux + 1
                 elif(ver_d2(i + 15-1) in pos_list and ver_d2(i + (15*2)-2) in pos_list):
-                    sequence_list.append(3)
+                    aux = sequence_list[1]
+                    sequence_list[1] = aux + 1
                 elif(ver_d2(i + 15-1) in pos_list):
-                    sequence_list.append(2)
-    
-        sequence_list.append(10000)
+                    aux = sequence_list[0]
+                    sequence_list[0] = aux + 1
                 
     def verify_game(self):
     
-        self.human_sequence_list[:] = []
-        self.computer_sequence_list[:] = []
+        #self.human_sequence_list[:] = [0, 0, 0, 0]
+        #self.computer_sequence_list[:] = [0, 0, 0, 0]
 
         self.verify_x(self.list_pos_human,self.human_sequence_list)
         self.verify_x(self.list_pos_computer,self.computer_sequence_list)
@@ -179,7 +196,7 @@ class game:
         self.verify_y(self.list_pos_computer,self.computer_sequence_list)
         self.verify_diagonal(self.list_pos_human,self.human_sequence_list)
         self.verify_diagonal(self.list_pos_computer,self.computer_sequence_list)
-        
+
         print("self.list_pos_human")
         print(self.list_pos_human)
         print("self.list_pos_computer")
