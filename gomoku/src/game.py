@@ -94,7 +94,7 @@ class game:
     def play_computer(self):
     
         #position_y, position_x = self.intelligence.debug_no_intelligence(self.board.matrix)
-        position_x, position_y, best = self.intelligence.mini_max((-math.inf), math.inf, 2, 5, self.computer_sequence_list)
+        position_y, position_x, best = self.intelligence.mini_max((-math.inf), math.inf, 2, 2, self.human_sequence_list, self.computer_sequence_list)
 
         
         if(self.insert_pos_list(self.list_pos_computer,int(position_x),int(position_y)) == True):

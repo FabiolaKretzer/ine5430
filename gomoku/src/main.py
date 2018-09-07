@@ -30,7 +30,8 @@ while(1):
     while(1):
         if(gomoku.play_computer() == True):
             break
-        
+    
+    
     gomoku.verify_game()
     
     #gomoku.board.window.mainloop()
