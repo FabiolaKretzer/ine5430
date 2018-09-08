@@ -35,4 +35,3 @@ while(1):
     gomoku.verify_game()
     
     #gomoku.board.window.mainloop()
-

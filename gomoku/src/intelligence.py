@@ -14,36 +14,48 @@ class intelligence():
     def mini_max(self, alpha, beta, player, profundity, human_sequence_list, computer_sequence_list):
 
         if profundity == 0 or self.is_end_play():
-            return (player, self.heuristic_utility(human_sequence_list, computer_sequence_list))
+            return (0, player, self.heuristic_utility(human_sequence_list, computer_sequence_list))
 
-        #human
-        if player == 1:
-            best = alpha
-            for i in range(0, 15):
-                for j in range(0, 15):
+        for i in range(0, 15):
+            for j in range(0, 15):
+                #human
+                if player == 1:
+                    best = alpha
                     if(self.board.matrix[i][j] != ' o ' and self.board.matrix[i][j] != ' x '):
-                        self.board.insert_piece(i, j, player)
-                        play, value = self.mini_max(alpha, beta, 2, profundity - 1, human_sequence_list, computer_sequence_list)
-                        self.board.remove_piece(i, j)
+                        #simulate movement the piece
+                        #self.board.insert_piece(i, j, player)
+                        #self.board.update_board()
+                        map_position = j*15 + (i+1)
+                        human_sequence_list.append(map_position)
+                        ignore, play, value = self.mini_max(alpha, beta, 2, profundity - 1, human_sequence_list, computer_sequence_list)
+                        #remove simulate movement the piece
+                        #self.board.remove_piece(i, j)
+                        #self.board.update_board()
+                        human_sequence_list.remove(map_position)
                         if best < value:
                             best = value
                             op_x, op_y = i, j
                         if beta <= best:
                             break
-        #computer
-        else:
-            best = beta
-            for i in range(0, 15):
-                for j in range(0, 15):
+                #computer
+                else:
+                    best = beta
                     if(self.board.matrix[i][j] != ' o ' and self.board.matrix[i][j] != ' x '):
-                        self.board.insert_piece(i, j, player)
-                        play, value = self.mini_max(alpha, beta, 1, profundity - 1, human_sequence_list, computer_sequence_list)
-                        self.board.remove_piece(i, j)
+                        #simulate movement the piece
+                        #self.board.insert_piece(i, j, player)
+                        #self.board.update_board()
+                        map_position = j*15 + (i+1)
+                        computer_sequence_list.append(map_position)
+                        ignore, play, value = self.mini_max(alpha, beta, 1, profundity - 1, human_sequence_list, computer_sequence_list)
+                        #remove simulate movement the piece
+                        #self.board.remove_piece(i, j)
+                        #self.board.update_board()
+                        computer_sequence_list.remove(map_position)
                         if best > value:
                             best = value
                             op_x, op_y = i, j
                         if best <= alpha:
-                            break
+                           break
 
         return (op_x, op_y, best)
 
