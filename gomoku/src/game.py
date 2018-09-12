@@ -1,5 +1,5 @@
 from board import board
-from intelligence import intelligence
+#from intelligence import intelligence
 import sys
 import os
 import math
@@ -44,7 +44,7 @@ class game:
     def __init__(self):
     
         self.board = board()
-        self.intelligence = intelligence()
+        #self.intelligence = intelligence()
         self.human_sequence_list = [0, 0, 0, 0]
         self.computer_sequence_list = [0, 0, 0, 0]
         
@@ -91,10 +91,20 @@ class game:
         #pos_list.sort()
         #print(pos_list)
 
+    def remove_pos_list(self, pos_list, x, y):
+          
+        map_position = y*15 + (x+1)
+        
+        if(map_position in pos_list):
+            pos_list.remove(map_position)
+            return True
+        else:
+            return False
+
     def play_computer(self):
     
         #position_y, position_x = self.intelligence.debug_no_intelligence(self.board.matrix)
-        position_y, position_x, best = self.intelligence.mini_max((-math.inf), math.inf, 2, 2, self.human_sequence_list, self.computer_sequence_list)
+        position_y, position_x, best = self.mini_max((-math.inf), math.inf, 2, 2, self.human_sequence_list, self.computer_sequence_list, self.list_pos_human, self.list_pos_computer)
 
         
         if(self.insert_pos_list(self.list_pos_computer,int(position_x),int(position_y)) == True):
@@ -133,6 +143,7 @@ class game:
                 elif(ver_r(i + 1) in pos_list):
                     aux = sequence_list[0]
                     sequence_list[0] = aux + 1
+        return sequence_list
     
     def verify_y(self,pos_list,sequence_list):
         if(len(pos_list) > 1):
@@ -150,6 +161,7 @@ class game:
                 elif(ver_v(i + 15) in pos_list):
                     aux = sequence_list[0]
                     sequence_list[0] = aux + 1
+        return sequence_list
                     
     def verify_diagonal(self, pos_list,sequence_list):
         if(len(pos_list) > 1):
@@ -167,6 +179,7 @@ class game:
                 elif(ver_d(i + 15+1) in pos_list):
                     aux = sequence_list[0]
                     sequence_list[0] = aux + 1
+        return sequence_list
         
     def verify_inverse_diagonal(self,pos_list,sequence_list):
         if(len(pos_list) > 1):
@@ -184,18 +197,19 @@ class game:
                 elif(ver_d2(i + 15-1) in pos_list):
                     aux = sequence_list[0]
                     sequence_list[0] = aux + 1
+        return sequence_list
                 
     def verify_game(self):
     
         #self.human_sequence_list[:] = [0, 0, 0, 0]
         #self.computer_sequence_list[:] = [0, 0, 0, 0]
 
-        self.verify_x(self.list_pos_human,self.human_sequence_list)
-        self.verify_x(self.list_pos_computer,self.computer_sequence_list)
-        self.verify_y(self.list_pos_human,self.human_sequence_list)
-        self.verify_y(self.list_pos_computer,self.computer_sequence_list)
-        self.verify_diagonal(self.list_pos_human,self.human_sequence_list)
-        self.verify_diagonal(self.list_pos_computer,self.computer_sequence_list)
+        seq_h = self.verify_x(self.list_pos_human,self.human_sequence_list)
+        seq_c = self.verify_x(self.list_pos_computer,self.computer_sequence_list)
+        seq_h = self.verify_y(self.list_pos_human, seq_h)
+        seq_c = self.verify_y(self.list_pos_computer,seq_c)
+        seq_h = self.verify_diagonal(self.list_pos_human, seq_h)
+        seq_c = self.verify_diagonal(self.list_pos_computer, seq_c)
 
         print("self.list_pos_human")
         print(self.list_pos_human)
@@ -205,8 +219,87 @@ class game:
         print(self.human_sequence_list)
         print("self.computer_sequence_list")
         print(self.computer_sequence_list)
+
+    def verify_list(self, human_sequence_list, computer_sequence_list, pos_human, pos_computer):
+        seq_h = self.verify_x(self.list_pos_human,self.human_sequence_list)
+        seq_c = self.verify_x(self.list_pos_computer,self.computer_sequence_list)
+        seq_h = self.verify_y(self.list_pos_human, seq_h)
+        seq_c = self.verify_y(self.list_pos_computer,seq_c)
+        seq_h = self.verify_diagonal(self.list_pos_human, seq_h)
+        seq_c = self.verify_diagonal(self.list_pos_computer, seq_c)
+
+        return seq_h, seq_c
     
         #print("game.verify_game")
+
+    #class intelligence():
+
+    #def __init__(self):
+        #self.board = board()
+    
+    def heuristic_utility(self, human_sequence_list, computer_sequence_list): 
+        heuristic = (10000000 * 5 * computer_sequence_list[3] + 100000 * 4 * computer_sequence_list[2] + 1000 * 3 * computer_sequence_list[1] + 10 * 2 * computer_sequence_list[0])  - (10000000 * 5 * human_sequence_list[3] + 100000 * 4 * human_sequence_list[2] + 1000 * 3 * human_sequence_list[1] + 10 * 2 * human_sequence_list[0])
+        return heuristic
+    
+        #print("intelligence.heuristic")
+
+    def mini_max(self, alpha, beta, player, profundity, human_sequence_list, computer_sequence_list, pos_human, pos_computer):
+        
+        if profundity == 0 or self.is_end_play():
+            return (0, player, self.heuristic_utility(human_sequence_list, computer_sequence_list))
+
+        for i in range(0, 15):
+            for j in range(0, 15):
+                #human
+                if player == 1:
+                    best = alpha
+                    if(self.board.matrix[i][j] != ' o ' and self.board.matrix[i][j] != ' x '):
+                        #simulate movement the piece
+                        self.board.insert_piece(i, j, player)
+                        self.insert_pos_list(pos_human, i, j)
+                        pos_human, pos_computer = self.verify_list(human_sequence_list, computer_sequence_list, pos_human, pos_computer)
+                        #self.board.update_board()
+                        ignore, play, value = self.mini_max(alpha, beta, 2, profundity - 1, human_sequence_list, computer_sequence_list, pos_human, pos_computer)
+                        #remove simulate movement the piece
+                        self.board.remove_piece(i, j)
+                        self.remove_pos_list(pos_computer, i, j)
+                        #self.board.update_board()
+                        if best < value:
+                            best = value
+                            op_x, op_y = i, j
+                        if beta <= best:
+                            break
+                #computer
+                else:
+                    best = beta
+                    if(self.board.matrix[i][j] != ' o ' and self.board.matrix[i][j] != ' x '):
+                        #simulate movement the piece
+                        self.board.insert_piece(i, j, player)
+                        self.insert_pos_list(pos_computer, i, j)
+                        pos_human, pos_computer = self.verify_list(human_sequence_list, computer_sequence_list, pos_human, pos_computer)
+                        #self.board.update_board()
+                        ignore, play, value = self.mini_max(alpha, beta, 1, profundity - 1, human_sequence_list, computer_sequence_list, pos_human, pos_computer)
+                        #remove simulate movement the piece
+                        self.board.remove_piece(i, j)
+                        self.remove_pos_list(pos_computer, i, j)
+                        #self.board.update_board()
+                        if best > value:
+                            best = value
+                            op_x, op_y = i, j
+                        if best <= alpha:
+                           break
+
+        return (op_x, op_y, best)
+
+    def is_end_play(self):
+        return False
+            
+    def debug_no_intelligence(self, matrix):
+            
+        for i in range(0,15):
+            for j in range(0,15):
+                if(matrix[i][j] != ' o ' and matrix[i][j] != ' x '):
+                    return i, j
        
 '''
 
