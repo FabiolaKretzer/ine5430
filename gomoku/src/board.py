@@ -23,11 +23,6 @@ class board():
         ['_ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _'],
         ['_ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _'],
         ['_ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _']]
-        
-        self.spaces = []
-        for x in range(0, 15):
-            for y in range(0, 15):
-                self.spaces.append(y*15 + (x+1))
 
         self.window = Tk()
    
@@ -56,11 +51,9 @@ class board():
 
     def remove_piece(self, position_x, position_y):
 
-        if(player_id == 1):
+        if(self.matrix[position_y][position_x] == ' o ' or self.matrix[position_y][position_x] == ' x '):
             self.matrix[position_y][position_x] = ' _ '
-        else:
-            self.matrix[position_y][position_x] = ' _ '
-            
+
         self.update_board()
         
     def update_board(self):
