@@ -106,7 +106,7 @@ class game:
         #position_y, position_x = self.intelligence.debug_no_intelligence(self.board.matrix)
         position_y, position_x, best = self.mini_max((-math.inf), math.inf, 2, 2, self.human_sequence_list, self.computer_sequence_list, self.list_pos_human, self.list_pos_computer)
 
-        
+        print("passei por aqui")
         if(self.insert_pos_list(self.list_pos_computer,int(position_x),int(position_y)) == True):
 
             self.board.insert_piece(int(position_x),int(position_y),2)
@@ -244,8 +244,9 @@ class game:
         #print("intelligence.heuristic")
 
     def mini_max(self, alpha, beta, player, profundity, human_sequence_list, computer_sequence_list, pos_human, pos_computer):
-        
-        if profundity == 0 or self.is_end_play():
+        print("prt")
+        print(profundity)
+        if profundity <= 0 or self.is_end_play():
             return (0, player, self.heuristic_utility(human_sequence_list, computer_sequence_list))
 
         for i in range(0, 15):
