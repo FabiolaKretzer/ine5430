@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/root/ontologies/2018/8/wine_tasting"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/root/ontologies/2018/8/wine_tasting">
+    <Prefix name="" IRI="http://www.semanticweb.org/root/ontologies/2018/8/wine_tasting"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Cheese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hobby"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#T_shirt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wine"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_left_side"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_rigth_side"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#billiards"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#blue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#brie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cabernet_sauvignon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#camilo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#camp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#carmenere"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#elias"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#emmenthal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ferdinando"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#fish"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#five"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#four"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#gorgonzola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#gouda"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#green"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#josue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#malbec"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#marcio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mato_grosso"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#merlot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#minas_gerais"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mountaineering"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#one"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paraiba"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#photograph"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#red"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#roqueford"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#roraima"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#santa_catarina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tannat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tree"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#two"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#white"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#yellow"/>
+    </Declaration>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#billiards"/>
+        <NamedIndividual IRI="#camp"/>
+        <NamedIndividual IRI="#fish"/>
+        <NamedIndividual IRI="#mountaineering"/>
+        <NamedIndividual IRI="#photograph"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#blue"/>
+        <NamedIndividual IRI="#green"/>
+        <NamedIndividual IRI="#red"/>
+        <NamedIndividual IRI="#white"/>
+        <NamedIndividual IRI="#yellow"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#brie"/>
+        <NamedIndividual IRI="#emmenthal"/>
+        <NamedIndividual IRI="#gorgonzola"/>
+        <NamedIndividual IRI="#gouda"/>
+        <NamedIndividual IRI="#roqueford"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#cabernet_sauvignon"/>
+        <NamedIndividual IRI="#carmenere"/>
+        <NamedIndividual IRI="#malbec"/>
+        <NamedIndividual IRI="#merlot"/>
+        <NamedIndividual IRI="#tannat"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#camilo"/>
+        <NamedIndividual IRI="#elias"/>
+        <NamedIndividual IRI="#ferdinando"/>
+        <NamedIndividual IRI="#josue"/>
+        <NamedIndividual IRI="#marcio"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#five"/>
+        <NamedIndividual IRI="#four"/>
+        <NamedIndividual IRI="#one"/>
+        <NamedIndividual IRI="#tree"/>
+        <NamedIndividual IRI="#two"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#mato_grosso"/>
+        <NamedIndividual IRI="#minas_gerais"/>
+        <NamedIndividual IRI="#paraiba"/>
+        <NamedIndividual IRI="#roraima"/>
+        <NamedIndividual IRI="#santa_catarina"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_rigth_side"/>
+        <NamedIndividual IRI="#five"/>
+        <NamedIndividual IRI="#four"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_left_side"/>
+        <NamedIndividual IRI="#four"/>
+        <NamedIndividual IRI="#five"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_rigth_side"/>
+        <NamedIndividual IRI="#four"/>
+        <NamedIndividual IRI="#tree"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_left_side"/>
+        <NamedIndividual IRI="#one"/>
+        <NamedIndividual IRI="#two"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_left_side"/>
+        <NamedIndividual IRI="#tree"/>
+        <NamedIndividual IRI="#four"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_rigth_side"/>
+        <NamedIndividual IRI="#tree"/>
+        <NamedIndividual IRI="#two"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_left_side"/>
+        <NamedIndividual IRI="#two"/>
+        <NamedIndividual IRI="#tree"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_rigth_side"/>
+        <NamedIndividual IRI="#two"/>
+        <NamedIndividual IRI="#one"/>
+    </ObjectPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#is_left_side"/>
+        <ObjectProperty IRI="#is_rigth_side"/>
+    </InverseObjectProperties>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->
+
