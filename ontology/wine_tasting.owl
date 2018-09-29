@@ -13,6 +13,9 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#Age"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Cheese"/>
     </Declaration>
     <Declaration>
@@ -20,6 +23,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Profession"/>
     </Declaration>
     <Declaration>
         <Class IRI="#T_shirt"/>
@@ -34,6 +40,12 @@
         <ObjectProperty IRI="#control"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#has_age"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_age"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#is_control_per"/>
     </Declaration>
     <Declaration>
@@ -56,6 +68,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#wine_is_drunk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#advocate"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#billiards"/>
@@ -85,6 +100,9 @@
         <NamedIndividual IRI="#emmenthal"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#engineer"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ferdinando"/>
     </Declaration>
     <Declaration>
@@ -103,6 +121,9 @@
         <NamedIndividual IRI="#josue"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#judge"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#malbec"/>
     </Declaration>
     <Declaration>
@@ -116,6 +137,12 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#photograph"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#police"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#programmer"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#red"/>
@@ -132,6 +159,161 @@
     <Declaration>
         <NamedIndividual IRI="#yellow"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#26"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#30"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#48"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="#Profession"/>
+        <NamedIndividual IRI="#advocate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hobby"/>
+        <NamedIndividual IRI="#billiards"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#T_shirt"/>
+        <NamedIndividual IRI="#blue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cheese"/>
+        <NamedIndividual IRI="#brie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#cabernet_sauvignon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Name"/>
+        <NamedIndividual IRI="#camilo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hobby"/>
+        <NamedIndividual IRI="#camp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#carmenere"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Name"/>
+        <NamedIndividual IRI="#elias"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cheese"/>
+        <NamedIndividual IRI="#emmenthal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Profession"/>
+        <NamedIndividual IRI="#engineer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Name"/>
+        <NamedIndividual IRI="#ferdinando"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hobby"/>
+        <NamedIndividual IRI="#fish"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cheese"/>
+        <NamedIndividual IRI="#gorgonzola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cheese"/>
+        <NamedIndividual IRI="#gouda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#T_shirt"/>
+        <NamedIndividual IRI="#green"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Name"/>
+        <NamedIndividual IRI="#josue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Profession"/>
+        <NamedIndividual IRI="#judge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#malbec"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Name"/>
+        <NamedIndividual IRI="#marcio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#merlot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hobby"/>
+        <NamedIndividual IRI="#mountaineering"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hobby"/>
+        <NamedIndividual IRI="#photograph"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Profession"/>
+        <NamedIndividual IRI="#police"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Profession"/>
+        <NamedIndividual IRI="#programmer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#T_shirt"/>
+        <NamedIndividual IRI="#red"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cheese"/>
+        <NamedIndividual IRI="#roqueford"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#tannat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#T_shirt"/>
+        <NamedIndividual IRI="#white"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#T_shirt"/>
+        <NamedIndividual IRI="#yellow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Age"/>
+        <NamedIndividual IRI="#24"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Age"/>
+        <NamedIndividual IRI="#26"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Age"/>
+        <NamedIndividual IRI="#30"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Age"/>
+        <NamedIndividual IRI="#35"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Age"/>
+        <NamedIndividual IRI="#48"/>
+    </ClassAssertion>
     <DifferentIndividuals>
         <NamedIndividual IRI="#billiards"/>
         <NamedIndividual IRI="#camp"/>
@@ -176,6 +358,11 @@
         <ObjectProperty IRI="#who_like"/>
         <NamedIndividual IRI="#cabernet_sauvignon"/>
         <NamedIndividual IRI="#merlot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_age"/>
+        <NamedIndividual IRI="#camilo"/>
+        <NamedIndividual IRI="#30"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#like_wine"/>
@@ -208,6 +395,11 @@
         <NamedIndividual IRI="#photograph"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_age"/>
+        <NamedIndividual IRI="#elias"/>
+        <NamedIndividual IRI="#35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#is_next"/>
         <NamedIndividual IRI="#elias"/>
         <NamedIndividual IRI="#marcio"/>
@@ -273,6 +465,11 @@
         <NamedIndividual IRI="#elias"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_age"/>
+        <NamedIndividual IRI="#marcio"/>
+        <NamedIndividual IRI="#48"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#is_next"/>
         <NamedIndividual IRI="#marcio"/>
         <NamedIndividual IRI="#camilo"/>
@@ -321,6 +518,16 @@
         <ObjectProperty IRI="#is_using"/>
         <NamedIndividual IRI="#yellow"/>
         <NamedIndividual IRI="#ferdinando"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_age"/>
+        <NamedIndividual IRI="#24"/>
+        <NamedIndividual IRI="#ferdinando"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_age"/>
+        <NamedIndividual IRI="#26"/>
+        <NamedIndividual IRI="#josue"/>
     </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_next"/>
@@ -333,6 +540,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#control"/>
         <ObjectProperty IRI="#is_control_per"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_age"/>
+        <ObjectProperty IRI="#is_age"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#is_using"/>
@@ -355,6 +566,13 @@
         <ObjectProperty IRI="#control"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#control"/>
+            <Class IRI="#Name"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_age"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_age"/>
             <Class IRI="#Name"/>
         </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
@@ -399,6 +617,13 @@
             <ObjectProperty IRI="#control"/>
             <Class IRI="#Hobby"/>
         </ObjectMinCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_age"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#has_age"/>
+            <Class IRI="#Wine"/>
+        </ObjectExactCardinality>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_next"/>
