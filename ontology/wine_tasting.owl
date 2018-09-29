@@ -22,9 +22,6 @@
         <Class IRI="#Name"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Person"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#State"/>
     </Declaration>
     <Declaration>
@@ -34,10 +31,40 @@
         <Class IRI="#Wine"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#is_left_side"/>
+        <ObjectProperty IRI="#color_like_play"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#is_rigth_side"/>
+        <ObjectProperty IRI="#is_shirt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_taste"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#like_play"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#play"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#play_like_color"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#states_wine"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taste"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#this_shirt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#who_likes_cheese_like"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#who_likes_wine_like"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wine_states"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#billiards"/>
@@ -73,12 +100,6 @@
         <NamedIndividual IRI="#fish"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#five"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#four"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#gorgonzola"/>
     </Declaration>
     <Declaration>
@@ -109,9 +130,6 @@
         <NamedIndividual IRI="#mountaineering"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#one"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#paraiba"/>
     </Declaration>
     <Declaration>
@@ -131,12 +149,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#tannat"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#tree"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#two"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#white"/>
@@ -180,13 +192,6 @@
         <NamedIndividual IRI="#marcio"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
-        <NamedIndividual IRI="#five"/>
-        <NamedIndividual IRI="#four"/>
-        <NamedIndividual IRI="#one"/>
-        <NamedIndividual IRI="#tree"/>
-        <NamedIndividual IRI="#two"/>
-    </DifferentIndividuals>
-    <DifferentIndividuals>
         <NamedIndividual IRI="#mato_grosso"/>
         <NamedIndividual IRI="#minas_gerais"/>
         <NamedIndividual IRI="#paraiba"/>
@@ -194,49 +199,198 @@
         <NamedIndividual IRI="#santa_catarina"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_rigth_side"/>
-        <NamedIndividual IRI="#five"/>
-        <NamedIndividual IRI="#four"/>
+        <ObjectProperty IRI="#color_like_play"/>
+        <NamedIndividual IRI="#blue"/>
+        <NamedIndividual IRI="#camp"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_left_side"/>
-        <NamedIndividual IRI="#four"/>
-        <NamedIndividual IRI="#five"/>
+        <ObjectProperty IRI="#who_likes_wine_like"/>
+        <NamedIndividual IRI="#cabernet_sauvignon"/>
+        <NamedIndividual IRI="#emmenthal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_rigth_side"/>
-        <NamedIndividual IRI="#four"/>
-        <NamedIndividual IRI="#tree"/>
+        <ObjectProperty IRI="#taste"/>
+        <NamedIndividual IRI="#camilo"/>
+        <NamedIndividual IRI="#merlot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_left_side"/>
-        <NamedIndividual IRI="#one"/>
-        <NamedIndividual IRI="#two"/>
+        <ObjectProperty IRI="#this_shirt"/>
+        <NamedIndividual IRI="#elias"/>
+        <NamedIndividual IRI="#blue"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_left_side"/>
-        <NamedIndividual IRI="#tree"/>
-        <NamedIndividual IRI="#four"/>
+        <ObjectProperty IRI="#like_play"/>
+        <NamedIndividual IRI="#ferdinando"/>
+        <NamedIndividual IRI="#mountaineering"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_rigth_side"/>
-        <NamedIndividual IRI="#tree"/>
-        <NamedIndividual IRI="#two"/>
+        <ObjectProperty IRI="#taste"/>
+        <NamedIndividual IRI="#ferdinando"/>
+        <NamedIndividual IRI="#malbec"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_left_side"/>
-        <NamedIndividual IRI="#two"/>
-        <NamedIndividual IRI="#tree"/>
+        <ObjectProperty IRI="#this_shirt"/>
+        <NamedIndividual IRI="#ferdinando"/>
+        <NamedIndividual IRI="#yellow"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_rigth_side"/>
-        <NamedIndividual IRI="#two"/>
-        <NamedIndividual IRI="#one"/>
+        <ObjectProperty IRI="#color_like_play"/>
+        <NamedIndividual IRI="#green"/>
+        <NamedIndividual IRI="#photograph"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#like_play"/>
+        <NamedIndividual IRI="#josue"/>
+        <NamedIndividual IRI="#fish"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#taste"/>
+        <NamedIndividual IRI="#josue"/>
+        <NamedIndividual IRI="#carmenere"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#who_likes_wine_like"/>
+        <NamedIndividual IRI="#malbec"/>
+        <NamedIndividual IRI="#brie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#taste"/>
+        <NamedIndividual IRI="#marcio"/>
+        <NamedIndividual IRI="#tannat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#who_likes_wine_like"/>
+        <NamedIndividual IRI="#merlot"/>
+        <NamedIndividual IRI="#roqueford"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wine_states"/>
+        <NamedIndividual IRI="#merlot"/>
+        <NamedIndividual IRI="#mato_grosso"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#color_like_play"/>
+        <NamedIndividual IRI="#red"/>
+        <NamedIndividual IRI="#fish"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wine_states"/>
+        <NamedIndividual IRI="#tannat"/>
+        <NamedIndividual IRI="#santa_catarina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#color_like_play"/>
+        <NamedIndividual IRI="#white"/>
+        <NamedIndividual IRI="#billiards"/>
     </ObjectPropertyAssertion>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#is_left_side"/>
-        <ObjectProperty IRI="#is_rigth_side"/>
+        <ObjectProperty IRI="#color_like_play"/>
+        <ObjectProperty IRI="#play_like_color"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#is_shirt"/>
+        <ObjectProperty IRI="#this_shirt"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#is_taste"/>
+        <ObjectProperty IRI="#taste"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#like_play"/>
+        <ObjectProperty IRI="#play"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#states_wine"/>
+        <ObjectProperty IRI="#wine_states"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#who_likes_cheese_like"/>
+        <ObjectProperty IRI="#who_likes_wine_like"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#color_like_play"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#color_like_play"/>
+            <Class IRI="#T_shirt"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#like_play"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#like_play"/>
+            <Class IRI="#Name"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#states_wine"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#wine_states"/>
+            <Class IRI="#Wine"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taste"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#taste"/>
+            <Class IRI="#Name"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#this_shirt"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#this_shirt"/>
+            <Class IRI="#Name"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#who_likes_wine_like"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#who_likes_wine_like"/>
+            <Class IRI="#Wine"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#color_like_play"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#color_like_play"/>
+            <Class IRI="#Hobby"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#like_play"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#like_play"/>
+            <Class IRI="#Hobby"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#states_wine"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#wine_states"/>
+            <Class IRI="#State"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taste"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#this_shirt"/>
+            <Class IRI="#Wine"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#this_shirt"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#this_shirt"/>
+            <Class IRI="#T_shirt"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#who_likes_wine_like"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#who_likes_wine_like"/>
+            <Class IRI="#Cheese"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
 </Ontology>
 
 
