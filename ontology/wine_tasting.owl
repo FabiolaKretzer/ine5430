@@ -13,25 +13,55 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#Advocate"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Age"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Cheese"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Engineer"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Hobby"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Judge"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Name"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Police"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Profession"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Programmer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#T_shirt"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Wine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#24"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#26"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#30"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#35"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#48"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#cheese_is_consume"/>
@@ -41,6 +71,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_age"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_name"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_profession"/>
@@ -186,8 +219,82 @@
     <Declaration>
         <NamedIndividual IRI="#48"/>
     </Declaration>
-    <ClassAssertion>
+    <EquivalentClasses>
+        <Class IRI="#Advocate"/>
+        <Class IRI="#35"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Engineer"/>
+        <Class IRI="#30"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Judge"/>
+        <Class IRI="#48"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Police"/>
+        <Class IRI="#26"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Programmer"/>
+        <Class IRI="#24"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Programmer"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#has_name"/>
+            <Class IRI="#Name"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Programmer"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#profession_is_age"/>
+            <Class IRI="#Age"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Advocate"/>
         <Class IRI="#Profession"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Engineer"/>
+        <Class IRI="#Profession"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Judge"/>
+        <Class IRI="#Profession"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Police"/>
+        <Class IRI="#Profession"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Programmer"/>
+        <Class IRI="#Profession"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#24"/>
+        <Class IRI="#Age"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#26"/>
+        <Class IRI="#Age"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#30"/>
+        <Class IRI="#Age"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#35"/>
+        <Class IRI="#Age"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#48"/>
+        <Class IRI="#Age"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Advocate"/>
         <NamedIndividual IRI="#advocate"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -227,7 +334,7 @@
         <NamedIndividual IRI="#emmenthal"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Profession"/>
+        <Class IRI="#Engineer"/>
         <NamedIndividual IRI="#engineer"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -255,7 +362,7 @@
         <NamedIndividual IRI="#josue"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Profession"/>
+        <Class IRI="#Judge"/>
         <NamedIndividual IRI="#judge"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -279,11 +386,11 @@
         <NamedIndividual IRI="#photograph"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Profession"/>
+        <Class IRI="#Police"/>
         <NamedIndividual IRI="#police"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Profession"/>
+        <Class IRI="#Programmer"/>
         <NamedIndividual IRI="#programmer"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -307,23 +414,23 @@
         <NamedIndividual IRI="#yellow"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Age"/>
+        <Class IRI="#24"/>
         <NamedIndividual IRI="#24"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Age"/>
+        <Class IRI="#26"/>
         <NamedIndividual IRI="#26"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Age"/>
+        <Class IRI="#30"/>
         <NamedIndividual IRI="#30"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Age"/>
+        <Class IRI="#35"/>
         <NamedIndividual IRI="#35"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Age"/>
+        <Class IRI="#48"/>
         <NamedIndividual IRI="#48"/>
     </ClassAssertion>
     <DifferentIndividuals>
@@ -362,11 +469,6 @@
         <NamedIndividual IRI="#marcio"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_profession"/>
-        <NamedIndividual IRI="#advocate"/>
-        <NamedIndividual IRI="#elias"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#is_control_per"/>
         <NamedIndividual IRI="#billiards"/>
         <NamedIndividual IRI="#camilo"/>
@@ -375,11 +477,6 @@
         <ObjectProperty IRI="#who_like"/>
         <NamedIndividual IRI="#cabernet_sauvignon"/>
         <NamedIndividual IRI="#merlot"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#has_age"/>
-        <NamedIndividual IRI="#camilo"/>
-        <NamedIndividual IRI="#30"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#like_wine"/>
@@ -412,11 +509,6 @@
         <NamedIndividual IRI="#photograph"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#has_age"/>
-        <NamedIndividual IRI="#elias"/>
-        <NamedIndividual IRI="#35"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#is_next"/>
         <NamedIndividual IRI="#elias"/>
         <NamedIndividual IRI="#marcio"/>
@@ -435,11 +527,6 @@
         <ObjectProperty IRI="#who_like"/>
         <NamedIndividual IRI="#emmenthal"/>
         <NamedIndividual IRI="#tannat"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_profession"/>
-        <NamedIndividual IRI="#engineer"/>
-        <NamedIndividual IRI="#camilo"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#is_next"/>
@@ -482,19 +569,9 @@
         <NamedIndividual IRI="#gouda"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_profession"/>
-        <NamedIndividual IRI="#judge"/>
-        <NamedIndividual IRI="#marcio"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#wine_is_drunk"/>
         <NamedIndividual IRI="#malbec"/>
         <NamedIndividual IRI="#elias"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#has_age"/>
-        <NamedIndividual IRI="#marcio"/>
-        <NamedIndividual IRI="#48"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#is_next"/>
@@ -522,26 +599,6 @@
         <NamedIndividual IRI="#ferdinando"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_profession"/>
-        <NamedIndividual IRI="#police"/>
-        <NamedIndividual IRI="#josue"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#profession_has_age"/>
-        <NamedIndividual IRI="#police"/>
-        <NamedIndividual IRI="#26"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_profession"/>
-        <NamedIndividual IRI="#programmer"/>
-        <NamedIndividual IRI="#ferdinando"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#profession_has_age"/>
-        <NamedIndividual IRI="#programmer"/>
-        <NamedIndividual IRI="#24"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#is_using"/>
         <NamedIndividual IRI="#red"/>
         <NamedIndividual IRI="#josue"/>
@@ -565,31 +622,6 @@
         <ObjectProperty IRI="#is_using"/>
         <NamedIndividual IRI="#yellow"/>
         <NamedIndividual IRI="#ferdinando"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_age"/>
-        <NamedIndividual IRI="#24"/>
-        <NamedIndividual IRI="#ferdinando"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_age"/>
-        <NamedIndividual IRI="#26"/>
-        <NamedIndividual IRI="#josue"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#profession_is_age"/>
-        <NamedIndividual IRI="#30"/>
-        <NamedIndividual IRI="#engineer"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#profession_is_age"/>
-        <NamedIndividual IRI="#35"/>
-        <NamedIndividual IRI="#advocate"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#profession_is_age"/>
-        <NamedIndividual IRI="#48"/>
-        <NamedIndividual IRI="#judge"/>
     </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_next"/>
@@ -706,7 +738,7 @@
         <ObjectProperty IRI="#has_age"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#has_age"/>
-            <Class IRI="#Wine"/>
+            <Class IRI="#Age"/>
         </ObjectExactCardinality>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
