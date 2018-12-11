@@ -1,0 +1,71 @@
+FUNCTION_BLOCK fuzzy
+
+VAR_INPUT		
+	x : REAL;
+	y : REAL;
+	angle_truck : REAL;
+END_VAR
+
+VAR_OUTPUT		
+	movement : REAL;
+END_VAR
+
+FUZZIFY x
+	TERM next := (0, 0) (0.5, 1) (1,0);
+	TERM middle := (0, 1) (0.5, 0);
+	TERM far := (0.5, 0) (1, 1);
+END_FUZZIFY
+
+FUZZIFY y
+	TERM next := (0.5, 0) (1, 1);
+	TERM middle := (0.3, 0) (0.5, 1) (0.7, 0);
+	TERM far := (0, 1) (0.4, 0);
+END_FUZZIFY
+
+FUZZIFY angle_truck
+	TERM north := (180, 0) (270, 1) (360, 0);
+    	TERM south := (0, 0) (90, 1) ( 180, 0);
+    	TERM west := (0, 1) (90, 0) (270, 0) (360, 1);
+	TERM east := (90, 0) (180, 1) (270, 0);
+END_FUZZIFY
+
+DEFUZZIFY movement
+	TERM turn_right := (-1, 1) (0, 0);
+	TERM turn_left := (0, 0) (1, 1);
+	METHOD : COA;		// Use 'Center Of Gravity' defuzzification method
+	DEFAULT := 0;		// Default value is 0 (if no rule activates defuzzifier)
+END_DEFUZZIFY
+
+RULEBLOCK No1
+	AND : MIN;	// Use 'min' for 'and'
+	ACT : MIN;	// Use 'min' activation method
+	ACCU : MAX;	// Use 'max' accumulation method
+
+	RULE 1 : if x is next and angle_truck is north then movement is turn_left;
+
+	RULE 2 : if x is next and angle_truck is east then movement is turn_right;
+
+	RULE 3 : if x is next and angle_truck is west then movement is turn_left;
+
+	RULE 4 : if x is middle and angle_truck is north then movement is turn_right;
+
+	RULE 5 : if x is middle and angle_truck is east then movement is turn_right;
+
+	RULE 6 : if x is middle and angle_truck is south and y is middle then movement is turn_left;
+
+	RULE 7 : if x is middle and angle_truck is south and y is far then movement is turn_left;
+
+	RULE 8 : if x is middle and angle_truck is west and y is next then movement is turn_right;
+
+	RULE 9 : if x is far and angle_truck is north then movement is turn_left;
+
+	RULE 10 : if x is far and angle_truck is west then movement is turn_left;
+
+	RULE 11 : if x is far and angle_truck is south and y is middle then movement is turn_right;
+
+	RULE 12 : if x is far and angle_truck is south and y is far then movement is turn_right;
+
+    	RULE 13 : if x is far and angle_truck is east and y is next then movement is turn_left;
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK

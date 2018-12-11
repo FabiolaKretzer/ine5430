@@ -32,7 +32,7 @@ END_FUZZIFY
 DEFUZZIFY movement
 	TERM turn_right := (-1, 1) (0, 0);
 	TERM turn_left := (0, 0) (1, 1);
-	METHOD : COA;		// Use 'Center Of Area' defuzzification method
+	METHOD : COA;		// Use 'Center Of Gravity' defuzzification method
 	DEFAULT := 0;		// Default value is 0 (if no rule activates defuzzifier)
 END_DEFUZZIFY
 
